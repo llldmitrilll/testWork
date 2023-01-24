@@ -1,0 +1,137 @@
+//====================================================================================================
+.page {
+
+   &__mblock {}
+}
+
+.mblock {
+
+   &__container {
+      padding-top: rem(60);
+      display: flex;
+      gap: rem(30);
+   }
+
+   &__cards {
+      flex: 1 1 rem(870);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: rem(30);
+   }
+
+   &__form {
+      flex: 0 0 rem(270)
+   }
+
+   &__card {
+      font-weight: 400;
+      line-height: math.div(16, 14);
+   }
+}
+
+.card {
+   position: relative;
+
+   &__labels {
+      position: absolute;
+      top: rem(10);
+      left: rem(15);
+      z-index: 5;
+      display: flex;
+      gap: rem(10);
+      text-align: center;
+      height: rem(22);
+   }
+
+   &__label-comfort {
+      padding: rem(3) 0;
+      border-radius: 4px;
+      flex: 0 0 rem(80);
+      background-color: #ffcf26;
+   }
+
+   &__label-sale {
+      padding: rem(3) 0;
+      border-radius: 4px;
+      flex: 0 0 rem(142);
+      color: #fff;
+      background-color: #11be75;
+      font-weight: 400;
+      line-height: math.div(16, 14);
+   }
+
+   &__image-ibg {
+      padding-bottom: percent(200, 270);
+   }
+
+   &__content {
+      margin: rem(15);
+   }
+
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+
+   &__data {
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+
+   &__metro {
+      position: relative;
+      margin-left: rem(26);
+
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+
+      &::after {
+         position: absolute;
+         content: "";
+         width: 16px;
+         height: 11px;
+         top: 50%;
+         left: rem(-26);
+         background-image: url("@img/icons/vector.svg");
+         transform: translateY(-60%);
+      }
+   }
+
+   &__address {
+      color: #777;
+   }
+}
+
+.form {
+
+   &__metro {}
+}
+
+.metro {
+
+   &__title {}
+
+   &__btns {}
+
+   &__row {
+      width: 100%;
+      height: rem(50);
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+   }
+
+   &__check {}
+
+   &__btn {}
+
+   &__btn--active {}
+}
+
+
+//====================================================================================================
