@@ -117,18 +117,49 @@
    &__btns {}
 
    &__row {
+      border: 1px solid #d6d6d6;
+      border-radius: 4px 4px 0 0;
       width: 100%;
-      height: rem(50);
       text-align: center;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       text-align: center;
+
+      &:last-child {
+         border-radius: 0 0 4px 4px;
+         border-top: none;
+
+      }
    }
 
-   &__check {}
+   &__check {
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      opacity: 0;
+      appearance: none;
 
-   &__btn {}
+      &:checked+.metro__btn {
+         background-color: #ffcf26;
+      }
+
+   }
+
+
+   &__btn {
+      height: rem(50);
+      padding: rem(17) 0;
+      flex: 1 1 rem(67);
+      cursor: pointer;
+      transition: background-color 0.2s ease-in;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #eed98c;
+         }
+      }
+
+   }
 
    &__btn--active {}
 }
