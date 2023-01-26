@@ -3,4 +3,17 @@
    font-weight: 700;
    font-size: rem(18);
    line-height: math.div(21, 18);
+   margin-bottom: rem(20);
+   position: relative;
+
+   &::before {
+      position: absolute;
+      cursor: pointer;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      background: url('@img/icons/shape-up.svg') center no-repeat;
+   }
 }

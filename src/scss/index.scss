@@ -12,11 +12,38 @@
       gap: rem(30);
    }
 
-   &__cards {
+   &__content {
       flex: 1 1 rem(870);
+   }
+
+   &__cards {
+
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: rem(30);
+   }
+
+   &__button {
+      background-color: #d6d6d6;
+      padding: 27px 0;
+      font-weight: 400;
+      font-size: rem(18);
+      line-height: math.div(21, 18);
+      width: 100%;
+      border-radius: 4px;
+      position: relative;
+      color: #4290C9;
+
+      &::before {
+         position: absolute;
+         content: "";
+         top: 50%;
+         right: 488px;
+         width: rem(24);
+         height: rem(24);
+         transform: translate(0, -50%);
+         background: url("@img/icons/plus-circle.svg") center no-repeat;
+      }
    }
 
    &__form {
@@ -107,7 +134,11 @@
 
 .form {
 
-   &__metro {}
+   &__element {
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+   }
 }
 
 .metro {
@@ -163,6 +194,255 @@
 
    &__btn--active {}
 }
+
+.pass {
+
+   &__title {}
+
+   &__radio {}
+
+   &__radio-label {
+      display: block;
+
+      &:not(:last-child) {
+         margin-bottom: rem(15);
+      }
+   }
+
+   &__radio-real {
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      appearance: none;
+
+      &:checked+.pass__radio-text::before {
+         position: absolute;
+         z-index: 5;
+         content: "";
+         top: 50%;
+         left: rem(6);
+         width: rem(8);
+         height: rem(8);
+         border-radius: 50%;
+         background: #3c3c3c;
+         transform: translate(0, -50%);
+      }
+
+      &:checked+.pass__radio-text::after {
+         background-color: #ffe074;
+      }
+
+      &:checked+.other__checkbox-text {
+         font-weight: 700;
+      }
+   }
+
+   &__radio-text {
+      position: relative;
+      font-size: rem(16);
+      line-height: math.div(19, 16);
+      padding-left: rem(30);
+
+      &::after {
+         position: absolute;
+         content: "";
+         top: 50%;
+         left: 0;
+         width: rem(20);
+         height: rem(20);
+         border: 1px solid #777;
+         border-radius: 50%;
+         transform: translate(0, -50%);
+
+      }
+
+
+   }
+}
+
+.other {
+
+   &__title {}
+
+   &__checkbox {}
+
+   &__hidden {
+      // display: none;
+      margin-bottom: rem(15);
+   }
+
+   &__checkbox-label {
+      display: block;
+
+      &:not(:last-child) {
+         margin-bottom: rem(15);
+      }
+   }
+
+   &__checkbox-real {
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      appearance: none;
+
+      &:checked+.other__checkbox-text::before {
+         position: absolute;
+         z-index: 5;
+         content: "";
+         top: 50%;
+         left: 0;
+         width: 18px;
+         height: 18px;
+         transform: translate(0, -50%);
+         background: url("@img/icons/shape.svg") center no-repeat;
+      }
+
+      &:checked+.other__checkbox-text::after {
+         background-color: #ffe074;
+      }
+
+      &:checked+.other__checkbox-text {
+         font-weight: 700;
+      }
+   }
+
+   &__checkbox-text {
+      position: relative;
+      font-size: rem(16);
+      line-height: math.div(19, 16);
+      padding-left: rem(30);
+
+      &::after {
+         position: absolute;
+         content: "";
+         top: 50%;
+         left: 0px;
+         width: 20px;
+         height: 20px;
+         border: 1px solid #3c3c3c;
+         border-radius: 2px;
+         transform: translate(0, -50%);
+      }
+   }
+
+   &__show-more {
+      color: #4290C9;
+   }
+}
+
+//============================   TOGGLE   ========================================================================
+.toggle {
+
+   &__checkbox {}
+
+   &__real {
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      appearance: none;
+
+      &:checked+.toggle__text::after {
+         background-color: #ffe074;
+      }
+
+      &:checked+.toggle__text::before {
+         left: 19px;
+      }
+   }
+
+   &__text {
+      padding-left: rem(47);
+      position: relative;
+      font-size: rem(16);
+      line-height: math.div(19, 16);
+      cursor: pointer;
+
+      &::after {
+
+         position: absolute;
+         content: "";
+         top: 50%;
+         left: 0;
+         width: rem(37);
+         height: rem(20);
+         border-radius: 10px;
+         background-color: #c4c4c4;
+         transform: translate(0, -50%);
+         transition: background-color 0.3s ease-in;
+      }
+
+      &::before {
+         position: absolute;
+         z-index: 5;
+         content: "";
+         top: 50%;
+         left: 2px;
+         width: rem(16);
+         height: rem(16);
+         background-color: #3c3c3c;
+         border-radius: 50%;
+         transform: translate(0, -50%);
+         transition: left 0.2s ease-out;
+      }
+   }
+}
+
+//==========================   BUTTON-ELEMENT   ===========================================================
+
+.button-element {
+
+   &__ok {
+      width: 100%;
+      padding: rem(15) rem(56);
+      background-color: #ffcf26;
+      border-radius: 2px;
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: math.div(19, 16);
+      transition: background-color 0.3s ease-in;
+
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #ffe074;
+         }
+      }
+   }
+
+   &__no {
+      width: 100%;
+      padding: rem(14) rem(56);
+      border: 1px solid #c4c4c4;
+      border-radius: 2px;
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: math.div(19, 16);
+      position: relative;
+      transition: background-color 0.4s ease-out;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #ececec;
+         }
+      }
+
+
+      &::before {
+         position: absolute;
+         content: "";
+         top: 50%;
+         left: 42px;
+         width: rem(24);
+         height: rem(24);
+         background: url("@img/icons/x.svg") center no-repeat;
+         transform: translate(0, -50%);
+      }
+   }
+}
+
 
 
 //====================================================================================================
