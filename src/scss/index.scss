@@ -163,6 +163,12 @@
          margin-bottom: rem(30);
       }
    }
+
+   &__body {
+      &--hidden {
+         display: none;
+      }
+   }
 }
 
 .metro {
@@ -291,16 +297,12 @@
    &__checkbox {}
 
    &__hidden {
-      // display: none;
-      margin-bottom: rem(15);
+      display: none;
    }
 
    &__checkbox-label {
       display: block;
-
-      &:not(:last-child) {
-         margin-bottom: rem(15);
-      }
+      margin-bottom: rem(15);
    }
 
    &__checkbox-real {
@@ -351,6 +353,12 @@
 
    &__show-more {
       color: #4290C9;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
    }
 }
 

@@ -5,6 +5,18 @@
    line-height: math.div(21, 18);
    margin-bottom: rem(20);
    position: relative;
+   cursor: pointer;
+
+
+   &--active {
+
+
+      &::before {
+
+         transform: rotate(180deg);
+      }
+
+   }
 
    &::before {
       position: absolute;
@@ -15,5 +27,6 @@
       width: 24px;
       height: 24px;
       background: url('@img/icons/shape-up.svg') center no-repeat;
+      transition: transform 0.3s ease-out;
    }
 }
