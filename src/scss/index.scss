@@ -18,7 +18,8 @@
    &__cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: rem(30);
+      column-gap: rem(30);
+      row-gap: rem(35);
    }
 
    &__button {
@@ -117,6 +118,10 @@
    }
 
    &__title {
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: math.div(21, 18);
+
       &:not(:last-child) {
          margin-bottom: rem(10);
       }
@@ -446,7 +451,7 @@
 
    &__no {
       width: 100%;
-      padding: rem(14) rem(56);
+      padding: rem(15) rem(40) rem(15) rem(78);
       border: 1px solid #c4c4c4;
       border-radius: 2px;
       font-weight: 400;
@@ -466,11 +471,11 @@
          position: absolute;
          content: "";
          top: 50%;
-         left: 42px;
+         left: 50%;
          width: rem(24);
          height: rem(24);
          background: url("@img/icons/x.svg") center no-repeat;
-         transform: translate(0, -50%);
+         transform: translate(-86px, -50%);
       }
    }
 }

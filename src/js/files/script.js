@@ -64,3 +64,16 @@ otherBtnShow.addEventListener('click', function () {
       otherBtnShow.innerText = '<| Скрыть'
    }
 })
+
+// услуги вкл/выкл 0% - 100% 
+
+const toggleReal = document.querySelector('.toggle__real');
+const toggleText = document.querySelector('.toggle__text');
+
+toggleReal.addEventListener('click', function () {
+   if (toggleReal.checked) {
+      toggleText.innerText = 'Услуги 100%';
+   } else {
+      toggleText.innerText = 'Услуги 0%';
+   }
+})
