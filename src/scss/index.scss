@@ -71,6 +71,14 @@
    &__card {
       font-weight: 400;
       line-height: math.div(16, 14);
+      cursor: pointer;
+      transition: transform 0.3s ease-out;
+
+      @media (any-hover: hover) {
+         &:hover {
+            transform: scale(1.05);
+         }
+      }
    }
 
    &__card--hidden {
